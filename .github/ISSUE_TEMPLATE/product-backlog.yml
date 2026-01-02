@@ -1,0 +1,42 @@
+name: Product Backlog
+description: プロダクト全体のバックログ（構想レベルも含む）
+title: "[Product Backlog] "
+labels: ["product-backlog"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 要望の概要
+      description: 一言でどんな価値・機能か
+      placeholder: "例: 設定をGUIで編集できるようにしたい"
+    validations:
+      required: true
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: 詳細説明
+      description: まだ粗くてよいので、思いついている内容をメモ
+      placeholder: "- 想定ユーザー\n- 使い方のイメージ\n- 懸念点 など"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: 状態
+      options:
+        - Idea
+        - Ready for Grooming
+        - Ready for Story
+        - Archived
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: メモ
+      description: ディスカッション用の自由記述
+    validations:
+      required: false

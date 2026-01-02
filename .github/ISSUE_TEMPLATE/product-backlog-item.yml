@@ -1,0 +1,51 @@
+name: Product Backlog Item
+description: 実装可能な粒度まで具体化されたPBI
+title: "[PBI] "
+labels: ["product-backlog-item"]
+body:
+  - type: textarea
+    id: link
+    attributes:
+      label: 関連User Story / Epic
+      description: 関連Issue番号やリンク
+      placeholder: "- Story: #123\n- Epic: #45"
+    validations:
+      required: false
+
+  - type: textarea
+    id: requirement
+    attributes:
+      label: 要件の詳細
+      description: 機能要件・非機能要件を記述
+      placeholder: "- 機能要件\n- 非機能要件\n- 制約条件"
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: 受け入れ条件
+      description: PBIとしての完了条件
+      placeholder: "- XXXができること\n- ログがYYYに出力されること"
+    validations:
+      required: true
+
+  - type: input
+    id: estimation
+    attributes:
+      label: 見積もり (Story Points)
+      placeholder: "5"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 優先度
+      options:
+        - Must
+        - Should
+        - Could
+        - Won't
+    validations:
+      required: true
