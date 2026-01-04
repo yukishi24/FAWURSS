@@ -1,38 +1,32 @@
-name: Sprint Backlog
-description: 特定スプリントのスプリントバックログ
-title: "[Sprint Backlog] Sprint "
+name: Sprint Task
+description: スプリントバックログ用タスク（マイルストーンでスプリント管理）
+title: "[SB] "
 labels: ["sprint-backlog"]
 body:
+  - type: dropdown
+    id: pbi
+    attributes:
+      label: 対応PBI
+      description: 親となるプロダクトバックログIssueを選択
+      options:
+        - "#123 [PBI] ログ機能"
+        - "#124 [PBI] 認証機能"
+    validations:
+      required: true
+
+  - type: textarea
+    id: task
+    attributes:
+      label: タスク詳細
+      description: 具体的な作業内容（実装/テスト/ドキュメント）
+      placeholder: "ログ作成APIの実装（POST /api/log）"
+    validations:
+      required: true
+
   - type: input
-    id: sprint-name
+    id: estimate
     attributes:
-      label: スプリント名
-      placeholder: "Sprint 1 (2026-01-01〜2026-01-14)"
+      label: 見積もり
+      placeholder: "3 (ストーリーポイント or 工数)"
     validations:
       required: true
-
-  - type: textarea
-    id: goal
-    attributes:
-      label: スプリントゴール
-      description: このスプリントで達成したいゴール
-      placeholder: "例: CLIツールの基本コマンド群を利用可能にする"
-    validations:
-      required: true
-
-  - type: textarea
-    id: pbis
-    attributes:
-      label: 対象PBI一覧
-      description: このスプリントに含めるPBIのリスト
-      placeholder: "- #123 [PBI] XXX\n- #124 [PBI] YYY"
-    validations:
-      required: true
-
-  - type: textarea
-    id: risks
-    attributes:
-      label: リスク・懸念
-      placeholder: "- チームメンバー不在\n- 技術的な不確実性 など"
-    validations:
-      required: false
