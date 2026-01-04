@@ -3,22 +3,23 @@ description: スプリントバックログ用タスク（マイルストーン�
 title: "[SB] "
 labels: ["sprint-backlog"]
 body:
-  - type: dropdown
-    id: pbi
+  - type: textarea
+    id: pbi-ref
     attributes:
-      label: 対応PBI
-      description: 親となるプロダクトバックログIssueを選択
-      options:
-        - "#123 [PBI] ログ機能"
-        - "#124 [PBI] 認証機能"
+      label: 対応PBI（任意）
+      description: |
+        紐づくPBI Issue番号を記載（該当なしの場合は空欄）
+        形式: #123 [PBI] ログ機能
+        複数: #123, #124
+      placeholder: "#123 [PBI] ログ機能\nまたは空欄"
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: task
     attributes:
       label: タスク詳細
-      description: 具体的な作業内容（実装/テスト/ドキュメント）
+      description: 具体的な作業内容
       placeholder: "ログ作成APIの実装（POST /api/log）"
     validations:
       required: true
@@ -27,6 +28,14 @@ body:
     id: estimate
     attributes:
       label: 見積もり
-      placeholder: "3 (ストーリーポイント or 工数)"
+      placeholder: "3 (ストーリーポイント/工数)"
     validations:
       required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 補足・依存関係
+      placeholder: "依存Issue: #125\n技術的制約: ..."
+    validations:
+      required: false
